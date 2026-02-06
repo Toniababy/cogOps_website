@@ -13,17 +13,20 @@ export default function Academy() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">CogOps Academy</h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#0F1115] dark:text-[#E5E7EB]">CogOps Academy</h2>
+            <p className="text-[#6B7280] text-lg mb-8 leading-relaxed">
               The CogOps Academy is designed for people who want practical, employable tech skills.
-              <span className="block mt-4 text-slate-900 dark:text-white font-medium">No fluff. No theory-only learning. Just real-world training.</span>
+              <span className="block mt-4 text-[#0F1115] dark:text-[#E5E7EB] font-medium">No fluff. No theory-only learning. Just real-world training.</span>
             </p>
+            
             <div className="space-y-4">
-              <h4 className="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-6">Learning Tracks</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-900 dark:text-white">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-[#2563eb] mb-6">Learning Tracks</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[#0F1115] dark:text-[#E5E7EB]">
                 {tracks.map((track, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 bg-slate-50 dark:bg-[#1F2937] rounded-xl border border-slate-200 dark:border-[#E5E7EB]/10 transition-all hover:bg-slate-100 dark:hover:bg-[#27303F]">
-                    {track.icon}
+                  <div key={i} className="flex items-center gap-3 p-4 bg-[#E5E7EB] dark:bg-[#1F2937] rounded-xl border border-[#6B7280]/10 dark:border-white/5 transition-all hover:bg-white dark:hover:bg-[#2563eb]/10 group">
+                    <div className="text-[#2563eb]">
+                       {track.icon}
+                    </div>
                     <span className="font-medium">{track.name}</span>
                   </div>
                 ))}
@@ -31,9 +34,9 @@ export default function Academy() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl">
-            <h3 className="text-2xl font-bold mb-8 italic text-blue-600 dark:text-blue-400">How Learning Works</h3>
-            <div className="space-y-8 text-slate-900 dark:text-white">
+          <div className="bg-[#E5E7EB] dark:bg-[#1F2937] p-10 rounded-3xl border border-[#6B7280]/10 dark:border-white/5 shadow-2xl">
+            <h3 className="text-2xl font-bold mb-8 italic text-[#2563eb]">How Learning Works</h3>
+            <div className="space-y-8 text-[#0F1115] dark:text-[#E5E7EB]">
               {[
                 { title: "Project-based learning", desc: "Build real things from day one." },
                 { title: "Real-world scenarios", desc: "Solve problems industry pros face." },
@@ -41,19 +44,20 @@ export default function Academy() {
                 { title: "Portfolio-focused outcomes", desc: "Graduate with work that gets you hired." },
               ].map((step, i) => (
                 <div key={i} className="flex gap-4">
-                  <div className="text-blue-600 dark:text-blue-500 font-bold text-xl">0{i + 1}</div>
+                  <div className="text-[#2563eb] font-bold text-xl">0{i + 1}</div>
                   <div>
                     <h5 className="font-bold">{step.title}</h5>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">{step.desc}</p>
+                    <p className="text-[#6B7280] text-sm">{step.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex flex-col xs:flex-row gap-4 w-full">
-              <button className="flex-1 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all text-center">
+            
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full">
+              <button className="flex-1 py-4 bg-[#2563eb] text-white rounded-xl font-bold hover:bg-blue-700 transition-all text-center">
                 Enroll Now
               </button>
-              <button className="flex-1 py-4 bg-white dark:bg-[#1F2937] border border-slate-200 dark:border-[#E5E7EB]/10 text-slate-900 dark:text-[#E5E7EB] rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-white dark:hover:text-[#0F1115] transition-all text-center">
+              <button className="flex-1 py-4 bg-white dark:bg-[#0F1115] border border-[#6B7280]/20 dark:border-white/10 text-[#0F1115] dark:text-[#E5E7EB] rounded-xl font-bold hover:bg-[#E5E7EB] dark:hover:bg-white dark:hover:text-[#0F1115] transition-all text-center">
                 View Programs
               </button>
             </div>

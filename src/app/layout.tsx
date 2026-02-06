@@ -23,7 +23,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{
           __html: `
             tailwind.config = {
-              darkMode: 'class', // THIS IS THE MISSING KEY
+              darkMode: 'class',
               theme: {
                 extend: {
                   colors: {
@@ -38,11 +38,15 @@ export default function RootLayout({
                 }
               }
             }
-  `}} />
+          `}} />
       </head>
-      <body className={`${inter.className} transition-colors duration-300 antialiased`}>
+
+      <body className={`${inter.className} transition-colors duration-300 bg-white dark:bg-[#0F1115] text-[#0F1115] dark:text-[#E5E7EB] antialiased`}>
         <Navbar />
-        <main>{children}</main>
+
+        <main className="relative min-h-screen">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

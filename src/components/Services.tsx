@@ -21,7 +21,7 @@ export default function Services() {
       cta: "Start Your Project"
     },
     {
-      title: "Growth, Ops & Digital Solutions",
+      title: "Growth & Digital Solutions",
       icon: <BarChart size={24} />,
       items: ["Operational systems", "Process automation", "Customer experience flows"],
       cta: "Get Started"
@@ -32,27 +32,40 @@ export default function Services() {
     <section id="services" className="py-24 bg-white dark:bg-[#0F1115] px-6 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-[#E5E7EB] mb-4">Services Overview</h2>
-          <p className="text-xl text-slate-600 dark:text-[#6B7280] italic">"We don’t just deliver projects. We solve problems."</p>
+          <h2 className="text-4xl md:text-6xl font-black text-[#0F1115] dark:text-[#E5E7EB] mb-4 tracking-tight">
+            Services Overview
+          </h2>
+          <p className="text-xl text-[#6B7280] italic font-medium">
+            "We don’t just deliver projects. We solve problems."
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {agencyServices.map((service, i) => (
-            <div key={i} className="bg-slate-50 dark:bg-[#1F2937] p-10 rounded-3xl border border-slate-200 dark:border-[#E5E7EB]/10 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-white dark:bg-[#0F1115] rounded-xl flex items-center justify-center shadow-sm mb-6 text-blue-600">
+            <div 
+              key={i} 
+              className="bg-[#E5E7EB] dark:bg-[#1F2937] p-10 rounded-[2.5rem] border border-[#6B7280]/10 dark:border-white/5 shadow-lg hover:shadow-2xl hover:shadow-[#2563eb]/5 transition-all duration-500 group"
+            >
+              <div className="w-14 h-14 bg-white dark:bg-[#0F1115] rounded-2xl flex items-center justify-center shadow-sm mb-8 text-[#2563eb] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-[#E5E7EB] mb-6">{service.title}</h3>
-              <ul className="space-y-3 mb-8">
+
+              <h3 className="text-2xl font-black text-[#0F1115] dark:text-[#E5E7EB] mb-6 tracking-tight">
+                {service.title}
+              </h3>
+
+              <ul className="space-y-4 mb-10">
                 {service.items.map((item, idx) => (
-                  <li key={idx} className="flex items-center text-slate-600 dark:text-[#6B7280]">
-                    <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3" />
+                  <li key={idx} className="flex items-center text-[#6B7280] font-medium">
+                    <span className="w-2 h-2 bg-[#2563eb] rounded-full mr-4 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center font-bold text-blue-600 group-hover:gap-3 transition-all">
-                {service.cta} <ArrowUpRight className="ml-2 w-4 h-4" />
+
+              <button className="flex items-center font-black text-[#2563eb] text-sm uppercase tracking-widest group-hover:gap-4 transition-all duration-300">
+                {service.cta} 
+                <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               </button>
             </div>
           ))}

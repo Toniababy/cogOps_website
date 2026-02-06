@@ -27,26 +27,31 @@ export default function Navbar() {
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
-    <nav className="fixed w-full z-50 bg-white dark:bg-[#0F1115] backdrop-blur-md border-b border-slate-200 dark:border-[#1F2937] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-        {/* Logo */}
-        <Link href="/" className="relative block h-16 w-48 md:h-24 md:w-64">
-          <Image
-            src="/cogops-logo.png"
-            alt="CogOps Logo"
-            fill
-            priority
-            className="object-contain object-left transition-all duration-300 dark:brightness-[1.5] dark:contrast-[0.8] dark:opacity-90"
-          />
+    <nav className="fixed w-full z-50 bg-white/90 dark:bg-[#0F1115]/90 backdrop-blur-md border-b border-[#6B7280]/20 dark:border-[#1F2937] transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center h-28">
+        <Link href="/" className="flex items-center gap-4 flex-shrink-0 group">
+          <div className="relative h-16 w-16 md:h-20 md:w-20">
+            <Image
+              src="/cogops-logo.png"
+              alt="CogOps Icon"
+              fill
+              priority
+              className="object-contain transition-all duration-500 "
+            />
+          </div>
+          <div className="flex flex-col -space-y-1">
+             <span className="text-2xl md:text-4xl font-black tracking-tighter text-[#0F1115] dark:text-[#E5E7EB]">
+              Cog<span className="text-[#2563eb]">Ops</span>
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-[#6B7280] dark:text-[#6B7280] hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
+              className="text-base font-extrabold text-[#6B7280] hover:text-[#2563eb] transition-all duration-300"
             >
               {link.name}
             </Link>
@@ -54,35 +59,34 @@ export default function Navbar() {
 
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-slate-100 dark:bg-[#1F2937] text-slate-900 dark:text-[#E5E7EB] hover:bg-slate-200 dark:hover:bg-[#2d3748] transition-all"
-            aria-label="Toggle Theme"
+            className="p-3.5 rounded-full bg-[#E5E7EB] dark:bg-[#1F2937] text-[#0F1115] dark:text-[#E5E7EB] hover:scale-110 transition-all"
           >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
           </button>
 
-          <Link href="#hire" className="px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-all">
+          <Link href="#hire" className="px-8 py-4 bg-[#2563eb] text-white text-sm font-black rounded-full hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/30">
             Book a Consultation
           </Link>
         </div>
 
-        <div className="flex md:hidden items-center gap-4">
-          <button onClick={toggleTheme} className="p-2 rounded-full bg-slate-100 dark:bg-[#1F2937] text-slate-900 dark:text-[#E5E7EB]">
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        <div className="flex lg:hidden items-center gap-4">
+          <button onClick={toggleTheme} className="p-3 rounded-full bg-[#E5E7EB] dark:bg-[#1F2937]">
+            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
           </button>
-          <button className="text-slate-900 dark:text-[#E5E7EB]" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
+          <button onClick={() => setIsOpen(!isOpen)} className="text-[#0F1115] dark:text-[#E5E7EB]">
+            {isOpen ? <X size={40} /> : <Menu size={40} />}
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-[#0F1115] border-b border-slate-200 dark:border-[#1F2937] p-6 space-y-4 shadow-xl">
+        <div className="lg:hidden bg-white dark:bg-[#0F1115] h-screen p-10 space-y-10 animate-in fade-in slide-in-from-right duration-500">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block text-lg font-semibold text-slate-900 dark:text-[#E5E7EB] hover:text-blue-600 transition-colors"
+              className="block text-4xl font-black text-[#6B7280] hover:text-[#2563eb]"
             >
               {link.name}
             </Link>
@@ -90,7 +94,7 @@ export default function Navbar() {
           <Link
             href="#hire"
             onClick={() => setIsOpen(false)}
-            className="block text-center py-3 bg-blue-600 text-white font-bold rounded-xl"
+            className="block text-center py-6 bg-[#2563eb] text-white font-black rounded-3xl text-2xl"
           >
             Book a Consultation
           </Link>
