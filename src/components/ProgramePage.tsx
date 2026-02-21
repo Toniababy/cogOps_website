@@ -1,60 +1,43 @@
-export default function ProgramPage({ name = "[Program Name]" }) {
+export default function ProgramPage({ name = "Foundational Workflow Ops" }) {
   return (
-    <section className="py-24 bg-white dark:bg-[#0F1115] px-6 transition-colors duration-300">
-      <div className="max-w-5xl mx-auto">
-        <div className="bg-[#E5E7EB] dark:bg-[#1F2937] p-8 md:p-16 rounded-[2.5rem] border border-[#6B7280]/10 dark:border-white/5 shadow-2xl transition-colors duration-300">
-        <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#0F1115] dark:text-[#E5E7EB] tracking-tight leading-tight">
-            {name}
-          </h1>
-          
-          <p className="text-[#2563eb] font-bold mb-12 text-lg">
-            This program is ideal for beginners or professionals looking to upskill.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 border-t border-[#6B7280]/20 dark:border-white/10 pt-12">
-            <div>
-              <h3 className="text-sm font-black mb-6 text-[#0F1115] dark:text-[#E5E7EB] uppercase tracking-[0.2em]">
-                What You’ll Learn
-              </h3>
-              <ul className="space-y-5 font-medium">
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✦</span> 
-                  <span>Core concepts and first principles</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✦</span> 
-                  <span>Practical industry-standard tools</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✦</span> 
-                  <span>End-to-end industry workflows</span>
-                </li>
-              </ul>
+    <section className="py-32 bg-white px-4 md:px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-[#0F1115] p-10 md:p-20 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
+          <div className="relative z-10">
+            <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter leading-[0.9]">
+              {name}
+            </h1>
+            <p className="text-[#6B7280] font-black mb-16 text-xs uppercase tracking-[0.3em]">
+              Syllabus Protocol // Version 1.0.4
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/10 pt-16">
+              <div>
+                <h3 className="text-[10px] font-black mb-8 text-[#6B7280] uppercase tracking-[0.4em]">Curriculum Focus</h3>
+                <ul className="space-y-6">
+                  {["First Principles Logic", "Technical Stack Mastery", "Production Pipelines"].map((text, i) => (
+                    <li key={i} className="flex items-center gap-4 text-sm font-black uppercase tracking-tight">
+                      <span className="w-1.5 h-1.5 bg-white rounded-full shrink-0" /> {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-[10px] font-black mb-8 text-[#6B7280] uppercase tracking-[0.4em]">Career Outcome</h3>
+                <ul className="space-y-6">
+                  {["Portfolio Execution", "Global Market Ready", "Industry Certification"].map((text, i) => (
+                    <li key={i} className="flex items-center gap-4 text-sm font-black uppercase tracking-tight">
+                      <span className="w-4 h-[1px] bg-[#6B7280]" /> {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <h3 className="text-sm font-black mb-6 text-[#0F1115] dark:text-[#E5E7EB] uppercase tracking-[0.2em]">
-                Program Outcomes
-              </h3>
-              <ul className="space-y-5 font-medium">
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✓</span> 
-                  <span>Apply your skills to real-world projects</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✓</span> 
-                  <span>Build a high-impact professional portfolio</span>
-                </li>
-                <li className="flex items-start gap-3 text-[#6B7280] dark:text-[#E5E7EB]/80">
-                  <span className="text-[#2563eb] mt-1">✓</span> 
-                  <span>Compete for global market opportunities</span>
-                </li>
-              </ul>
-            </div>
+            
+            <button className="mt-20 w-full py-6 bg-white text-[#0F1115] rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-[#E5E7EB] transition-all">
+              Initiate Enrollment
+            </button>
           </div>
-          
-          <button className="mt-16 w-full py-5 bg-[#2563eb] text-white rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-blue-700 hover:shadow-2xl hover:shadow-blue-500/30 transition-all active:scale-[0.98]">
-            Enroll in This Program
-          </button>
         </div>
       </div>
     </section>

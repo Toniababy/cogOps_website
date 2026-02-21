@@ -3,55 +3,52 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#E5E7EB] dark:bg-[#0F1115] border-t border-[#6B7280]/20 dark:border-[#1F2937] pt-16 pb-8 px-6 transition-colors duration-300">
+    <footer className="bg-white border-t border-[#F3F4F6] pt-24 pb-12 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
 
-          <div className="lg:col-span-2">
-            <Link href="/" className="relative inline-block h-16 w-48 md:h-20 md:w-56 mb-6">
-              <Image
-                src="/cogops-logo.png"
-                alt="CogOps Logo"
-                fill
-                priority
-                className="object-contain object-left transition-all duration-300 dark:brightness-[1.5] dark:contrast-[0.8] dark:opacity-90"
-              />
+          <div className="lg:col-span-2 space-y-8">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative h-16 w-16 grayscale group-hover:grayscale-0 transition-all">
+                <Image src="/cogops-logo.png" alt="CogOps Logo" fill className="object-contain" />
+              </div>
+              <span className="text-2xl font-black tracking-tighter text-[#0F1115] uppercase">
+                CogOps<span className="text-[#6B7280]">®</span>
+              </span>
             </Link>
-            <p className="text-[#6B7280] max-w-sm leading-relaxed text-base">
-              CogOps is a tech-savvy agency and learning institution helping founders, brands, and
-              individuals build, grow, and stay relevant in a digital world.
+            <p className="text-[#6B7280] max-w-sm text-sm font-bold uppercase leading-relaxed tracking-tight">
+              A dual-force technology agency and learning institution built for the next generation of digital infrastructure.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold text-[#0F1115] dark:text-[#E5E7EB] mb-6">Explore</h4>
-            <ul className="space-y-4 text-[#6B7280] text-sm font-medium">
-              <li><Link href="#about" className="hover:text-[#2563eb] transition-colors">Our Story</Link></li>
-              <li><Link href="#services" className="hover:text-[#2563eb] transition-colors">Agency Services</Link></li>
-              <li><Link href="#academy" className="hover:text-[#2563eb] transition-colors">Academy</Link></li>
-              <li><Link href="#insights" className="hover:text-[#2563eb] transition-colors">Insights (Blog)</Link></li>
+            <h4 className="text-[10px] font-black text-[#0F1115] mb-8 uppercase tracking-[0.4em]">Directory</h4>
+            <ul className="space-y-4 text-[11px] font-black text-[#6B7280] uppercase tracking-widest">
+              <li><Link href="/about" className="hover:text-[#0F1115]">01. About</Link></li>
+              <li><Link href="/services" className="hover:text-[#0F1115]">02. Services</Link></li>
+              <li><Link href="/academy" className="hover:text-[#0F1115]">03. Academy</Link></li>
+              <li><Link href="/insights" className="hover:text-[#0F1115]">04. Insights</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-[#0F1115] dark:text-[#E5E7EB] mb-6">Contact</h4>
-            <ul className="space-y-4 text-[#6B7280] text-sm">
-              <li className="font-medium">Email: <span className="text-[#0F1115] dark:text-[#E5E7EB]">hello@cogops.com</span></li>
-              <li className="pt-2">
-                <Link href="#hire" className="px-5 py-3 bg-[#2563eb] text-white rounded-xl font-bold hover:bg-blue-700 transition-all inline-block shadow-lg shadow-blue-500/20">
-                  Book a Consultation
-                </Link>
-              </li>
+            <h4 className="text-[10px] font-black text-[#0F1115] mb-8 uppercase tracking-[0.4em]">Connect</h4>
+            <ul className="space-y-4 text-[11px] font-black text-[#6B7280] uppercase tracking-widest">
+              <li><a href="https://x.com/cogops93" className="hover:text-[#0F1115]">X / Twitter</a></li>
+              <li><a href="https://instagram.com/cogops93" className="hover:text-[#0F1115]">Instagram</a></li>
+              <li><a href="https://linkedin.com/company/CogOps" className="hover:text-[#0F1115]">LinkedIn</a></li>
+              <li><a href="https://wa.me/2348118102821" className="hover:text-[#0F1115]">WhatsApp</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-[#6B7280]/20 dark:border-[#1F2937] flex flex-col md:flex-row justify-between items-center gap-4 text-[#6B7280]">
-          <p className="text-[10px] uppercase tracking-[0.2em] font-semibold">© CogOps. All rights reserved</p>
-          <div className="flex gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
-            <Link href="#" className="hover:text-[#0F1115] dark:hover:text-white transition-colors">Twitter</Link>
-            <Link href="#" className="hover:text-[#0F1115] dark:hover:text-white transition-colors">LinkedIn</Link>
-            <Link href="#" className="hover:text-[#0F1115] dark:hover:text-white transition-colors">Instagram</Link>
+        <div className="pt-12 border-t border-[#F3F4F6] flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-[#9CA3AF]">
+            © COGOPS SYSTEM // {new Date().getFullYear()} // ALL RIGHTS RESERVED
+          </p>
+          <div className="flex gap-8 text-[9px] font-black uppercase tracking-[0.4em] text-[#6B7280]">
+            <Link href="/privacy" className="hover:text-[#0F1115]">Privacy</Link>
+            <Link href="/terms" className="hover:text-[#0F1115]">Terms</Link>
           </div>
         </div>
       </div>

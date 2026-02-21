@@ -1,68 +1,82 @@
-import { Mail, Github, Twitter, Linkedin, Calendar } from 'lucide-react';
+import { Mail, Linkedin, Calendar, MessageCircle, Instagram, Facebook } from 'lucide-react';
 
 export default function Contact() {
+  const socials = [
+    { name: "X", handle: "@cogops93", link: "https://x.com/cogops93" },
+    { name: "Instagram", handle: "@cogops93", link: "https://instagram.com/cogops93" },
+    { name: "TikTok", handle: "@cogops93", link: "https://tiktok.com/@cogops93" },
+    { name: "Facebook", handle: "CogOps", link: "https://facebook.com/CogOps" },
+    { name: "LinkedIn", handle: "CogOps", link: "https://linkedin.com/company/CogOps" }
+  ];
+
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-[#0F1115] px-6 transition-colors duration-300">
+    <section id="contact" className="py-32 bg-white px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="text-[#0F1115] dark:text-[#E5E7EB]">
-            <h2 className="text-sm font-bold text-[#2563eb] uppercase tracking-widest mb-4">Get in Touch</h2>
-            <h3 className="text-4xl font-bold mb-6 leading-tight">Have a project, idea, or question? Let’s talk.</h3>
-            
-            <div className="space-y-8 mt-12">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-[#2563eb]/20 rounded-full flex items-center justify-center text-[#2563eb]">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#6B7280]">Email us at</p>
-                  <p className="font-bold">hello@cogops.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-[#2563eb]/20 rounded-full flex items-center justify-center text-[#2563eb]">
-                  <Calendar size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#6B7280]">Fast track</p>
-                  <button className="font-bold text-[#2563eb] hover:underline transition-all">Book a consultation</button>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.4em] mb-4">Communication Protocol</h2>
+              <h3 className="text-5xl md:text-7xl font-black text-[#0F1115] uppercase tracking-tighter leading-none">
+                Connect<span className="text-[#6B7280]">.</span>
+              </h3>
             </div>
 
-            <div className="mt-12 flex gap-6 text-[#6B7280]">
-              <Twitter className="hover:text-[#2563eb] cursor-pointer transition-colors" />
-              <Linkedin className="hover:text-[#2563eb] cursor-pointer transition-colors" />
-              <Github className="hover:text-[#0F1115] dark:hover:text-white cursor-pointer transition-colors" />
+            <div className="space-y-6">
+              <a href="mailto:cogops93@gmail.com" className="flex items-center gap-6 group">
+                <div className="w-14 h-14 bg-[#F3F4F6] rounded-2xl flex items-center justify-center text-[#0F1115] group-hover:bg-[#0F1115] group-hover:text-white transition-all">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest">Email Interface</p>
+                  <p className="text-xl font-black text-[#0F1115]">cogops93@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="https://wa.me/2348118102821" target="_blank" className="flex items-center gap-6 group">
+                <div className="w-14 h-14 bg-[#F3F4F6] rounded-2xl flex items-center justify-center text-[#0F1115] group-hover:bg-[#25D366] group-hover:text-white transition-all">
+                  <MessageCircle size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest">Direct WhatsApp</p>
+                  <p className="text-xl font-black text-[#0F1115]">+234 811 810 2821</p>
+                </div>
+              </a>
+            </div>
+
+            <div className="pt-10 border-t border-[#F3F4F6]">
+              <h4 className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.3em] mb-8">Social Infrastructure</h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                {socials.map((social) => (
+                  <a key={social.name} href={social.link} className="block group">
+                    <p className="text-[10px] font-black text-[#0F1115] uppercase tracking-widest group-hover:text-[#6B7280] transition-colors">{social.name}</p>
+                    <p className="text-[11px] font-bold text-[#6B7280]">{social.handle}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="bg-[#E5E7EB] dark:bg-[#1F2937] p-10 rounded-3xl border border-[#6B7280]/10 dark:border-white/5 shadow-lg">
+          <div className="bg-[#0F1115] p-8 md:p-12 rounded-[3rem] shadow-2xl">
             <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  className="w-full p-4 rounded-xl bg-white dark:bg-[#0F1115] border border-[#6B7280]/20 dark:border-white/5 text-[#0F1115] dark:text-[#E5E7EB] outline-none focus:ring-2 focus:ring-[#2563eb] placeholder:text-[#6B7280]/60 transition-all" 
-                />
-                <input 
-                  type="email" 
-                  placeholder="Your Email" 
-                  className="w-full p-4 rounded-xl bg-white dark:bg-[#0F1115] border border-[#6B7280]/20 dark:border-white/5 text-[#0F1115] dark:text-[#E5E7EB] outline-none focus:ring-2 focus:ring-[#2563eb] placeholder:text-[#6B7280]/60 transition-all" 
-                />
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Identify Entity</label>
+                <input type="text" placeholder="Full Name" className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest" />
               </div>
-              <textarea 
-                placeholder="Tell us about your project or question..." 
-                rows={5} 
-                className="w-full p-4 rounded-xl bg-white dark:bg-[#0F1115] border border-[#6B7280]/20 dark:border-white/5 text-[#0F1115] dark:text-[#E5E7EB] outline-none focus:ring-2 focus:ring-[#2563eb] placeholder:text-[#6B7280]/60 transition-all"
-              ></textarea>
-              
-              <button className="w-full py-4 bg-[#0F1115] dark:bg-[#2563eb] text-white font-bold rounded-xl transition-all hover:bg-opacity-90 hover:scale-[1.01] active:scale-[0.99]">
-                Send Message
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Return Address</label>
+                <input type="email" placeholder="Email Address" className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Transmission Data</label>
+                <textarea placeholder="Project brief or inquiry..." rows={4} className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest resize-none"></textarea>
+              </div>
+              <button className="w-full py-6 bg-white text-[#0F1115] font-black uppercase tracking-[0.3em] text-xs rounded-2xl transition-all hover:bg-[#E5E7EB] active:scale-[0.98]">
+                Submit Protocol
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>

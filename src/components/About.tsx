@@ -1,42 +1,71 @@
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-white dark:bg-[#0F1115] px-6 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto text-[#0F1115] dark:text-[#E5E7EB]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-          <div className="space-y-8">
-            <h2 className="text-xs font-bold text-[#6B7280] uppercase tracking-[0.3em]">About CogOps</h2>
-            <h3 className="text-4xl md:text-5xl font-bold leading-tight">Our Story</h3>
-            <p className="text-lg text-[#6B7280]">CogOps was created to solve a simple problem: too many ideas fail not because they’re bad, but because execution is broken.</p>
-            <p className="text-lg font-medium">We exist to bridge the gap between ideas, execution, and growth — for both businesses and individuals.</p>
-            
-            <div className="grid gap-6 pt-6">
-              <div>
-                <h4 className="font-semibold mb-1">Our Mission</h4>
-                <p className="text-[#6B7280]">To help founders, brands, and individuals build relevant, scalable, and future-ready solutions.</p>
+    <section id="about" className="pt-44 pb-20 bg-white px-4 md:px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
+
+          <div className="space-y-16">
+            <div>
+              <h2 className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.4em] mb-4">Origin Protocol</h2>
+              <h3 className="text-5xl md:text-8xl font-black leading-[0.8] text-[#0F1115] uppercase tracking-tighter">
+                Our <br/> Story<span className="text-[#6B7280]">.</span>
+              </h3>
+            </div>
+
+            <p className="text-xl md:text-3xl text-[#6B7280] font-medium leading-tight tracking-tight italic max-w-xl">
+              "Too many ideas fail not because they’re bad, but because execution is broken."
+            </p>
+
+            <div className="space-y-12 pt-8 border-t-2 border-[#F3F4F6]">
+              <div className="group">
+                <h4 className="font-black text-[#0F1115] mb-4 uppercase text-xs tracking-[0.3em] flex items-center gap-3">
+                  <span className="w-8 h-[2px] bg-[#0F1115]" /> Mission
+                </h4>
+                <p className="text-xl md:text-4xl font-black text-[#0F1115]tracking-tighter leading-[1.1]">
+                  Building <span className="text-[#6B7280]">scalable</span> and future-ready solutions for the modern founder.
+                </p>
               </div>
-              <div>
-                <h4 className="font-semibold mb-1">Our Vision</h4>
-                <p className="text-[#6B7280]">To become a trusted execution partner and learning institution powering the next generation of digital products and talent.</p>
+
+              <div className="group">
+                <h4 className="font-black text-[#0F1115] mb-4 uppercase text-xs tracking-[0.3em] flex items-center gap-3">
+                  <span className="w-8 h-[2px] bg-[#0F1115]" /> Vision
+                </h4>
+                <p className="text-xl md:text-4xl font-black text-[#0F1115]  tracking-tighter leading-[1.1]">
+                  Powering the <span className="text-[#6B7280]">infrastructure</span> of next-generation digital products.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#E5E7EB] dark:bg-[#1F2937] p-12 rounded-3xl border border-[#6B7280]/20 dark:border-white/5 shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h3 className="text-2xl font-bold mb-6">The CogOps Model</h3>
-            <p className="text-[#6B7280] mb-8">CogOps operates as:</p>
-            <ul className="space-y-6">
-              <li className="flex gap-4">
-                <span className="mt-1 w-2 h-2 rounded-full bg-[#0F1115] dark:bg-[#E5E7EB]" />
-                <p className="font-medium">A technology and operations agency for businesses</p>
-              </li>
-              <li className="flex gap-4">
-                <span className="mt-1 w-2 h-2 rounded-full bg-[#0F1115] dark:bg-[#E5E7EB]" />
-                <p className="font-medium">A learning institution for aspiring and growing tech professionals</p>
-              </li>
-            </ul>
+          <div className="sticky top-32 bg-[#0F1115] p-8 md:p-14 rounded-[3rem] shadow-2xl overflow-hidden">
+            <div className="absolute -top-10 -right-10 opacity-5">
+              <h1 className="text-[15rem] font-black text-white leading-none tracking-tighter">CO</h1>
+            </div>
+            
+            <h3 className="text-3xl font-black mb-12 text-white uppercase tracking-tight relative z-10">
+              The CogOps Model
+            </h3>
+            
+            <div className="space-y-10 relative z-10">
+              {[
+                { title: "Agency Division", text: "Technology & Ops for high-growth businesses" },
+                { title: "Academy Division", text: "Learning Institution for specialized professionals" }
+              ].map((item, i) => (
+                <div key={i} className="space-y-2">
+                  <p className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.2em]">{item.title}</p>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-2 h-2 rounded-full bg-white shrink-0 mt-2" />
+                    <p className="font-bold text-white uppercase text-lg md:text-xl tracking-tight leading-tight">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-            <div className="mt-10 p-6 bg-white dark:bg-[#0F1115] rounded-2xl border border-[#6B7280]/20 dark:border-white/5">
-              <p className="text-[#6B7280] italic">“This dual model ensures everything we build and teach is grounded in real-world application.”</p>
+            <div className="mt-20 p-8 bg-white/5 border border-white/10 rounded-[2rem] relative z-10">
+              <p className="text-[#E5E7EB] text-lg font-medium leading-snug italic">
+                “Grounding every build in real-world application.”
+              </p>
+              <p className="mt-4 text-[10px] font-black text-white uppercase tracking-widest">— Technical Mandate</p>
             </div>
           </div>
         </div>
