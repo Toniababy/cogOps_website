@@ -12,7 +12,6 @@ export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // 1. Restored Form State
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,12 +19,11 @@ export default function SignUpPage() {
     password: ''
   });
 
-  // 2. Restored Strict Validation Logic
   const isFormValid = 
     formData.firstName.trim() !== '' && 
     formData.lastName.trim() !== '' && 
     formData.email.trim().includes('@') && 
-    formData.password.length >= 8; // 8 character minimum protocol
+    formData.password.length >= 8; 
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +31,7 @@ export default function SignUpPage() {
 
     setIsLoading(true);
 
-    // Simulate Server Authentication Protocol
+  
     setTimeout(() => {
       setIsLoading(false);
       toast.success("Identity Verified. Welcome to CogOps.", {

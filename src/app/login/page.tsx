@@ -13,10 +13,18 @@ export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => { setIsLoading(false); router.push("/dashboard"); }, 1500);
-  };
+  e.preventDefault();
+  setIsLoading(true);
+
+  setTimeout(() => {
+
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userName', 'Okon Blessing');
+    
+    setIsLoading(false);
+    router.push("/"); 
+  }, 1500);
+};
 
   return (
     <main className="h-screen w-full flex bg-white overflow-hidden">
@@ -47,7 +55,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-[#6B7280] ml-1">Identity Entity</label>
+              <label className="text-[10px] font-black uppercase tracking-widest text-[#6B7280] ml-1">EMAIL ADDRESS</label>
               <div className="relative flex items-center">
                 <Mail className="absolute left-5 text-[#9CA3AF]" size={18} />
                 <input 

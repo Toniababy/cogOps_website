@@ -71,7 +71,7 @@ export default function IntakeForm() {
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 bg-[#F3F4F6] p-5 sm:p-8 md:p-16 rounded-[2rem] border border-[#E5E7EB]">
 
           <div className="space-y-1.5">
-            <label className="text-[9px] font-black uppercase tracking-widest text-[#0F1115]">Full Name</label>
+            <label className="text-[12px] font-black uppercase tracking-widest text-[#0F1115]">Full Name</label>
             <input 
               type="text" 
               className={`w-full p-3.5 rounded-xl bg-white border ${errors.name ? 'border-red-500' : 'border-[#E5E7EB]'} text-sm outline-none focus:ring-2 focus:ring-[#0F1115] transition-all`}
@@ -82,7 +82,7 @@ export default function IntakeForm() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-[9px] font-black uppercase tracking-widest text-[#0F1115]">Work Email</label>
+            <label className="text-[12px] font-black uppercase tracking-widest text-[#0F1115]">Work Email</label>
             <input 
               type="email" 
               className={`w-full p-3.5 rounded-xl bg-white border ${errors.email ? 'border-red-500' : 'border-[#E5E7EB]'} text-sm outline-none focus:ring-2 focus:ring-[#0F1115] transition-all`}
@@ -93,7 +93,7 @@ export default function IntakeForm() {
           </div>
 
           <div className="relative space-y-1.5">
-            <label className="text-[9px] font-black uppercase tracking-widest text-[#0F1115]">Project Type</label>
+            <label className="text-[12px] font-black uppercase tracking-widest text-[#0F1115]">Project Type</label>
             <div 
               onClick={() => setActiveDropdown(activeDropdown === 'type' ? null : 'type')}
               className="w-full p-3.5 rounded-xl bg-white border border-[#E5E7EB] text-sm font-bold flex justify-between items-center cursor-pointer hover:border-[#0F1115] transition-all"
@@ -117,7 +117,7 @@ export default function IntakeForm() {
           </div>
 
           <div className="relative space-y-1.5">
-            <label className="text-[9px] font-black uppercase tracking-widest text-[#0F1115]">Budget Range</label>
+            <label className="text-[12px] font-black uppercase tracking-widest text-[#0F1115]">Budget Range</label>
             <div 
               onClick={() => setActiveDropdown(activeDropdown === 'budget' ? null : 'budget')}
               className="w-full p-3.5 rounded-xl bg-white border border-[#E5E7EB] text-sm font-bold flex justify-between items-center cursor-pointer hover:border-[#0F1115] transition-all"
@@ -141,7 +141,7 @@ export default function IntakeForm() {
           </div>
 
           <div className="space-y-1.5 md:col-span-2">
-            <label className="text-[9px] font-black uppercase tracking-widest text-[#0F1115]">The Challenge</label>
+            <label className="text-[12px] font-black uppercase tracking-widest text-[#0F1115]">The Challenge</label>
             <textarea 
               rows={4} 
               className={`w-full p-4 rounded-xl bg-white border ${errors.challenge ? 'border-red-500' : 'border-[#E5E7EB]'} text-sm outline-none focus:ring-2 focus:ring-[#0F1115] transition-all`}

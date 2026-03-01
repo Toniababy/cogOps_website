@@ -88,8 +88,8 @@ export default function TeamSection() {
         >
           {infiniteStaff.map((member, i) => (
             <div key={i} className="inline-block min-w-[240px] group text-center">
-              <div className="relative w-full aspect-square rounded-full overflow-hidden mb-6 bg-[#F3F4F6] border-2 border-transparent group-hover:border-[#0F1115] transition-all duration-500">
-                <Image src={member.img} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700" />
+              <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-6 bg-[#F3F4F6]">
+                <Image src={member.img} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" />
               </div>
               <h4 className="text-sm font-black text-[#0F1115] uppercase tracking-tighter">{member.name}</h4>
               <p className="text-[#6B7280] font-black text-[9px] uppercase tracking-[0.2em] mt-1 italic">{member.role}</p>
