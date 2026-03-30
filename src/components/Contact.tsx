@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
-import { Mail, Linkedin, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '@/app/utils/api';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -20,26 +21,33 @@ export default function Contact() {
     { name: "LinkedIn", handle: "CogOps", link: "https://linkedin.com/company/CogOps" }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (formData.name.trim().length < 2) return toast.error("NAME IDENTIFICATION REQUIRED");
+    if (!formData.email.includes('@')) return toast.error("VALID RETURN ADDRESS REQUIRED");
+    if (formData.message.trim().length < 10) return toast.error("TRANSMISSION DATA TOO BRIEF");
+
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("TRANSMISSION SUCCESSFUL. COGOPS PROTOCOL INITIATED.", {
-        position: "bottom-right",
-        theme: "dark",
-        style: { 
-          background: "#0F1115", 
-          color: "#fff", 
-          fontFamily: "monospace", 
-          border: "1px solid #6B7280",
-          fontSize: "10px",
-          letterSpacing: "0.1em"
-        }
+    try {
+      await api.post('/hire/submit', {
+        name: formData.name,
+        email: formData.email,
+        message: `General Inquiry: ${formData.message}`
       });
+
+      toast.success("Transmission Successful. CogOps Protocol Initialized.", {
+        position: "bottom-right",
+        theme: "dark"
+      });
+
       setFormData({ name: '', email: '', message: '' });
-    }, 2000);
+    } catch (error) {
+      toast.error("System Offline.", { theme: "dark" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,7 +56,6 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
-  
           <div className="space-y-12">
             <div>
               <h2 className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.4em] mb-4">Communication Protocol</h2>
@@ -92,7 +99,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-[#0F1115] p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white/5">
+          {/* Form Container - REMOVED shadow-2xl for Flat Design */}
+          <div className="bg-[#0F1115] p-8 md:p-12 rounded-[3rem] border border-white/5">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Identify Entity</label>
@@ -107,7 +115,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-black text-[#6B7280]tracking-widest ml-2">Return Address</label>
+                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Return Address</label>
                 <input 
                   type="email" 
                   required

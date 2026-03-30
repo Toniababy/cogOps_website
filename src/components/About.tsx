@@ -46,7 +46,7 @@ export default function About() {
               <h1 className="text-[12rem] font-black text-white leading-none tracking-tighter">CO</h1>
             </div>
             
-            <h3 className="text-2xl font-black mb-10 text-white uppercase tracking-tight relative z-10">
+            <h3 className="text-2xl font-black mb-10 text-white tracking-tight relative z-10">
               The CogOps Model
             </h3>
             

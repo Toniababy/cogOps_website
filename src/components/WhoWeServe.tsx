@@ -34,11 +34,3 @@ export default function WhoWeServe() {
 
 
 
-// 3. ask about images 
-
-// 4. finish sigin and siginup 
-
-// 5. when loggedin the user initioals should be in the navbar like the one in cbt
-
-
-// 7. listen to the vn

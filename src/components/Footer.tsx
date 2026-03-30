@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="relative h-16 w-16 grayscale group-hover:grayscale-0 transition-all">
                 <Image src="/cogops-logo.png" alt="CogOps Logo" fill className="object-contain" />
               </div>
-              <span className="text-2xl font-black tracking-tighter text-[#0F1115] uppercase">
+              <span className="text-2xl font-black tracking-tighter text-[#0F1115]">
                 CogOps<span className="text-[#6B7280]">®</span>
               </span>
             </Link>
@@ -43,8 +43,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-[#F3F4F6] flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-[#9CA3AF]">
-            © COGOPS SYSTEM // {new Date().getFullYear()} // ALL RIGHTS RESERVED
+          <p className="text-[9px] font-black tracking-[0.4em] text-[#9CA3AF]">
+            © CogOps SYSTEM // {new Date().getFullYear()} // ALL RIGHTS RESERVED
           </p>
           <div className="flex gap-8 text-[9px] font-black uppercase tracking-[0.4em] text-[#6B7280]">
             <Link href="/privacy" className="hover:text-[#0F1115]">Privacy</Link>

@@ -13,14 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const hideNavbarRoutes = ['/login', '/signup'];
-  const shouldHideNavbar = hideNavbarRoutes.includes(pathname);
+  const hideNavbarRoutes = ['/login', '/signup', '/forgot'];
+
+  const shouldHideNavbar = hideNavbarRoutes.includes(pathname) || pathname.startsWith('/dashboard');
 
   return (
     <html lang="en" className="scroll-smooth">
-      
+      <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
       <body className={`${inter.className} transition-colors duration-300 bg-white text-[#0F1115] antialiased`}>
-<script src="https://cdn.tailwindcss.com"></script>
         
         {!shouldHideNavbar && <Navbar />}
 
@@ -29,7 +31,6 @@ export default function RootLayout({
         </main>
 
         {!shouldHideNavbar && <Footer />}
-        
       </body>
     </html>
   );

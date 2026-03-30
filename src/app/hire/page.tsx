@@ -28,7 +28,7 @@ export default function HireUs() {
       <section className="pt-40 pb-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <h1 className="text-5xl md:text-7xl font-black text-[#0F1115] mb-6 tracking-tighter uppercase">
+            <h1 className="text-5xl md:text-7xl font-black text-[#0F1115] mb-6 tracking-tighter">
               Partner with <br/> CogOps Agency
             </h1>
             <p className="text-[#6B7280] text-xl max-w-3xl leading-relaxed font-medium">

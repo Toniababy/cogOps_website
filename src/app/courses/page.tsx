@@ -11,30 +11,42 @@ export default function CoursesPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const courses = [
-    { 
-      id: 1, 
-      title: "Foundational Workflow Ops", 
-      category: "growth-ops", 
-      level: "Intermediate", 
-      duration: "6 Weeks", 
-      status: "Locked" 
+    {
+      id: "frontend-development",
+      title: "Frontend Engineering & Interaction",
+      category: "development",
+      level: "Intermediate",
+      duration: "8 Weeks",
+      status: "Available",
+      phase: "Phase 2"
     },
-    { 
-      id: 2, 
-      title: "Full-Stack System Design", 
-      category: "development", 
-      level: "Advanced", 
-      duration: "12 Weeks", 
-      status: "Available" 
+    {
+      id: "backend-development",
+      title: "Backend Architecture & Logic",
+      category: "development",
+      level: "Advanced",
+      duration: "8 Weeks",
+      status: "Available",
+      phase: "Phase 2"
     },
-    { 
-      id: 3, 
-      title: "Brand Identity Frameworks", 
-      category: "design-ux", 
-      level: "Beginner", 
-      duration: "4 Weeks", 
-      status: "Available" 
+    {
+      id: "ui-ux-design",
+      title: "Product Design & UX Research",
+      category: "design-ux",
+      level: "Beginner",
+      duration: "8 Weeks",
+      status: "Available",
+      phase: "Phase 2"
     },
+    {
+      id: "qa-software-testing",
+      title: "QA Engineering & Automation",
+      category: "technical-support",
+      level: "Intermediate",
+      duration: "8 Weeks",
+      status: "Available",
+      phase: "Phase 2"
+    }
   ];
 
   const filteredCourses = useMemo(() => {
@@ -61,7 +73,7 @@ export default function CoursesPage() {
             </h1>
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-[#6B7280] font-bold text-xs uppercase tracking-widest">
-                Filtered by: 
+                Filtered by:
               </p>
               <span className="px-3 py-1 bg-[#0F1115] text-white text-[10px] font-black uppercase rounded-md tracking-tighter">
                 {activeFilter.replace(/-/g, ' ')}
@@ -76,13 +88,13 @@ export default function CoursesPage() {
 
           <div className="relative w-full md:w-96 group">
             <div className="absolute left-6 top-[52%] -translate-y-1/2 z-10 pointer-events-none">
-            <Search className="text-[#6B7280]" size={18} />
+              <Search className="text-[#6B7280]" size={18} />
             </div>
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search technical modules..." 
+              placeholder="Search technical modules..."
               className="w-full pl-14 pr-6 py-5 bg-[#F3F4F6] border-2 border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#0F1115] transition-all font-bold text-sm text-[#0F1115] placeholder:text-[#9CA3AF]"
             />
           </div>
@@ -104,7 +116,7 @@ export default function CoursesPage() {
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   )}
                 </div>
-                
+
                 <h3 className="text-2xl md:text-3xl font-black text-[#0F1115] mb-8 leading-tight uppercase">
                   {course.title}
                 </h3>
@@ -127,19 +139,18 @@ export default function CoursesPage() {
                     </div>
                   </div>
 
-                  <button 
-                    onClick={() => alert("The technical syllabus for this module is currently being finalized. Please check back soon.")}
+                  <Link
+                    href={`/courses/${course.id}`}
                     className="w-full py-5 bg-[#0F1115] text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] hover:bg-[#1F2937] transition-all flex items-center justify-center gap-3 active:scale-[0.97]"
-                    >
+                  >
                     View Syllabus <BookOpen size={14} />
-                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="py-20 text-center border-2 border-dashed border-[#E5E7EB] rounded-[3rem]">
-            <Search size={40} className="mx-auto mb-4 text-[#E5E7EB]" />
             <h3 className="text-xl font-black text-[#0F1115] uppercase">No Modules Found</h3>
             <p className="text-[#6B7280] font-medium mt-2 mb-6">Try adjusting your search or category filter.</p>
             <button onClick={clearFilters} className="px-6 py-3 bg-[#0F1115] text-white font-black text-[10px] uppercase rounded-xl">Clear All</button>
