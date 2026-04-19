@@ -3,7 +3,7 @@ export default function Portfolio() {
     { 
       id: "PRTCL-01",
       client: "Transiflow", 
-      title: "Transiflow Logistics System", // Moved to main heading
+      title: "Transiflow Road Transport Booking App", 
       problem: "Fragmented Local Logistics", 
       solution: "Fleet & Park Synchronization System", 
       outcome: "Direct Station-to-Station Booking",

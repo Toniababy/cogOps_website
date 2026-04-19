@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { LayoutDashboard, BookOpen, LogOut, MessageSquare, Menu, X, Lock } from 'lucide-react';
+import { LayoutDashboard, BookOpen, LogOut, MessageSquare, Menu, X, Lock, Home } from 'lucide-react';
 import api from '../utils/api';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -61,9 +61,8 @@ export default function Dashboard() {
         <div className="flex min-h-screen bg-[#F3F4F6] relative">
             <ToastContainer />
 
-            {/* Mobile Header */}
             <div className="md:hidden fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md px-6 py-5 flex justify-between items-center z-40 border-b border-[#E5E7EB]">
-                <span className="text-[#0F1115] font-black tracking-tighter text-lg">
+                <span onClick={() => router.push('/')} className="text-[#0F1115] font-black tracking-tighter text-lg cursor-pointer">
                     Cog<span className="text-[#6B7280]">Ops</span>
                 </span>
                 <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 bg-[#0F1115] text-white rounded-lg">
@@ -73,15 +72,21 @@ export default function Dashboard() {
 
             <aside className={`fixed md:relative inset-y-0 left-0 z-50 w-72 bg-[#0F1115] text-white p-8 flex flex-col justify-between transform transition-all duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
                 <div className="space-y-12">
-                    <div className="font-black text-2xl tracking-tighter">
+                    <div onClick={() => router.push('/')} className="font-black text-2xl tracking-tighter cursor-pointer">
                         Cog<span className="text-[#6B7280]">Ops</span>
                     </div>
                     
                     <nav className="space-y-2">
                         <p className="text-[10px] font-black text-[#6B7280] uppercase tracking-[0.3em] mb-4">Command Center</p>
+                        
+                        <button onClick={() => router.push('/')} className="w-full flex items-center gap-4 p-4 text-[#6B7280] hover:text-white rounded-2xl transition-all text-[11px] font-black uppercase tracking-widest">
+                            <Home size={18} /> Return to Base
+                        </button>
+
                         <button className="w-full flex items-center gap-4 p-4 bg-white/10 border border-white/5 rounded-2xl text-[11px] font-black uppercase tracking-widest text-white transition-all">
                             <LayoutDashboard size={18} /> Overview
                         </button>
+                        
                         <button onClick={() => router.push('/courses')} className="w-full flex items-center gap-4 p-4 text-[#6B7280] hover:text-white rounded-2xl transition-all text-[11px] font-black uppercase tracking-widest">
                             <BookOpen size={18} /> Curriculum
                         </button>
@@ -104,7 +109,6 @@ export default function Dashboard() {
                     </h1>
                 </header>
 
-                {/* Enrollment Restricted Card */}
                 <div className="bg-[#0F1115] rounded-[3rem] p-8 md:p-14 text-white relative overflow-hidden">
                     <div className="relative z-10">
                         <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
