@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Terminal, Layers, Zap, Users, Globe } from 'lucide-react';
+import { ArrowRight, Globe, Shield } from 'lucide-react';
 
 function ParticleCanvas() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -63,98 +63,69 @@ function ParticleCanvas() {
 }
 
 const stats = [
-  { num: '1+', label: 'Projects Built' },
-  { num: '16wk', label: 'Academy Program' },
-  { num: '20+', label: 'Team Members' },
+  { num: '100%', label: 'Commitment' }, 
+  { num: '16wk', label: 'Academy Track' },
+  { num: '24/7', label: 'Ops Support' },
 ];
 
-const features = [
-  { icon: Terminal, label: 'Product Builds' },
-  { icon: Layers, label: 'System Design' },
-  { icon: Zap, label: 'Workflow Ops' },
-  { icon: Users, label: 'Skill Training' },
-];
+// const features = [
+//   { icon: Terminal, label: 'Product Builds' },
+//   { icon: Layers, label: 'System Design' },
+//   { icon: Zap, label: 'Workflow Ops' },
+//   { icon: Users, label: 'Skill Training' },
+// ];
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-4 bg-white overflow-hidden min-h-[95vh] flex flex-col justify-center">
-
-      {/* Grid background */}
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-white overflow-hidden min-h-screen flex flex-col justify-center">
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0F1115" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+        <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#grid)" /></svg>
       </div>
-
-      {/* Particles */}
       <ParticleCanvas />
 
       <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
-
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] mb-6 md:mb-10">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0F1115] animate-pulse" />
-          <Globe size={12} className="text-[#0F1115]" />
-          <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-[#0F1115] whitespace-nowrap">
-            Engineering the Future of Work
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#0F1115]">
+            v1.0 // THE EXECUTION PROTOCOL
           </span>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-[#0F1115] leading-[0.95] tracking-tighter uppercase mb-6 md:mb-8 animate-fade-up">
-          Build <span className="text-[#6B7280]">Better</span>.<br />
-          Scale Faster.
+        {/* PUNCHIER HEADLINE */}
+        <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black text-[#0F1115] leading-[0.85] tracking-tighter uppercase mb-8 animate-fade-up">
+          WE BUILD.<br />
+          <span className="text-[#6B7280]">YOU SCALE.</span>
         </h1>
 
-        {/* Subtext */}
-        <p className="text-base md:text-xl text-[#6B7280] max-w-2xl mx-auto leading-relaxed font-medium mb-8 md:mb-10 px-4">
-          A dedicated technical partner for visionary founders and
-          a hands-on academy for the next generation of tech leaders.
+        {/* CLEARER SUBTEXT (The "Who & What") */}
+        <p className="text-lg md:text-2xl text-[#6B7280] max-w-3xl mx-auto leading-tight font-bold mb-12 px-4 uppercase tracking-tight">
+          A Technical Powerhouse for <span className="text-[#0F1115]">Visionary Founders</span> and a 
+          High-Performance Academy for the <span className="text-[#0F1115]">Next Generation of Builders.</span>
         </p>
 
-        {/* Stats bar */}
-        <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto mb-10 md:mb-12">
-          {stats.map(({ num, label }) => (
-            <div key={label} className="bg-[#F9FAFB] border border-[#E5E7EB] rounded-xl py-3 px-2 text-center">
-              <span className="block text-xl md:text-2xl font-black text-[#0F1115]">{num}</span>
-              <span className="block text-[7px] md:text-[8px] font-bold uppercase tracking-widest text-[#6B7280] mt-0.5">{label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full max-w-3xl mx-auto px-4 mb-16 md:mb-24">
+        {/* BIGGER, OBVIOUS CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl mx-auto px-4 mb-20">
           <Link href="/hire" className="w-full sm:w-auto">
-            <button className="w-full sm:min-w-[200px] px-8 py-5 bg-[#0F1115] text-white font-black rounded-xl hover:bg-[#1F2937] transition-all shadow-xl active:scale-95 text-sm md:text-lg flex items-center justify-center gap-3 uppercase tracking-widest whitespace-nowrap">
-              Hire Agency <ArrowRight size={18} />
+            <button className="w-full sm:min-w-[240px] px-8 py-6 bg-[#0F1115] text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
+              Initiate Project <ArrowRight size={20} />
             </button>
           </Link>
           <Link href="/academy" className="w-full sm:w-auto">
-            <button className="w-full sm:min-w-[200px] px-8 py-5 bg-white border-[2px] border-[#0F1115] text-[#0F1115] font-black rounded-xl hover:bg-[#F3F4F6] transition-all shadow-[6px_6px_0px_0px_rgba(15,17,21,0.1)] active:translate-x-1 active:translate-y-1 active:shadow-none text-sm md:text-lg uppercase tracking-widest whitespace-nowrap">
-              Our Academy
+            <button className="w-full sm:min-w-[240px] px-8 py-6 bg-white border-[3px] border-[#0F1115] text-[#0F1115] font-black rounded-2xl hover:bg-[#F3F4F6] transition-all text-sm uppercase tracking-widest">
+              Join Academy
             </button>
           </Link>
         </div>
 
-        {/* Icon row */}
-        <div className="pt-10 border-t border-[#E5E7EB] grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {features.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex flex-col items-center gap-2 group">
-              <div className="w-9 h-9 rounded-lg bg-[#F3F4F6] border border-[#E5E7EB] flex items-center justify-center group-hover:bg-[#0F1115] transition-colors">
-                <Icon size={16} className="text-[#0F1115] group-hover:text-white transition-colors" />
-              </div>
-              <span className="font-black text-[8px] md:text-[9px] uppercase tracking-widest text-[#6B7280] whitespace-nowrap">
-                {label}
-              </span>
+        {/* LIVELY STATS BAR */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60">
+          {stats.map(({ num, label }) => (
+            <div key={label} className="text-center">
+              <span className="block text-3xl font-black text-[#0F1115] tracking-tighter uppercase">{num}</span>
+              <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#6B7280]">{label}</span>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

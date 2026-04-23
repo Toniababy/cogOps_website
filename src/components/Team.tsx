@@ -85,7 +85,14 @@ export default function TeamSection() {
             <div className="bg-[#0F1115] rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 text-white relative overflow-hidden group">
                 <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 relative z-10">
                     <div className="relative w-full max-w-[280px] md:max-w-sm aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden flex-shrink-0 shadow-2xl">
-                        <Image src={founder.img} alt={founder.name} fill className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" />
+                        <Image 
+    src={founder.img} 
+    alt={founder.name} 
+    fill 
+    sizes="(max-width: 768px) 100vw, 400px" 
+    priority 
+    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" 
+  />
                     </div>
                     <div className="flex-1 text-center lg:text-left">
                         <p className="text-[#6B7280] font-black text-[10px] md:text-[11px] uppercase tracking-[0.4em] mb-4">Founder & Lead Operator</p>

@@ -1,3 +1,7 @@
+'use client';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+
 export default function Portfolio() {
   const cases = [
     { 
@@ -8,9 +12,9 @@ export default function Portfolio() {
       solution: "Fleet & Park Synchronization System", 
       outcome: "Direct Station-to-Station Booking",
       desc: "A localized transit protocol enabling users to reserve specific seating and park locations. Digitizing the manual interstate travel model with flight-style booking logic.",
+      link: "http://transiflow.com.ng", 
       isFeatured: true
     },
-
   ];
 
   return (
@@ -33,7 +37,17 @@ export default function Portfolio() {
               <div>
                 <div className="flex justify-between items-start mb-12">
                   <span className="px-4 py-1.5 bg-[#0F1115] text-white rounded-full text-[9px] font-black uppercase tracking-widest">{c.client}</span>
-                  <span className="text-[10px] font-black text-[#9CA3AF] uppercase tracking-widest">{c.id}</span>
+                  <div className="flex items-center gap-4">
+                    {/* NEW: LAUNCH BUTTON */}
+                    <Link 
+                      href={c.link} 
+                      target="_blank" 
+                      className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#0F1115] hover:opacity-60 transition-all border-b-2 border-[#0F1115]"
+                    >
+                      Launch Protocol <ArrowUpRight size={14} />
+                    </Link>
+                    <span className="text-[10px] font-black text-[#9CA3AF] uppercase tracking-widest">{c.id}</span>
+                  </div>
                 </div>
 
                 <h3 className={`${c.isFeatured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-black mb-8 text-[#0F1115] uppercase tracking-tighter leading-[0.9]`}>

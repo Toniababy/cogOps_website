@@ -99,44 +99,47 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form Container - REMOVED shadow-2xl for Flat Design */}
-          <div className="bg-[#0F1115] p-8 md:p-12 rounded-[3rem] border border-white/5">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Identify Entity</label>
-                <input 
-                  type="text" 
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  placeholder="FULL NAME" 
-                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest" 
-                />
-              </div>
+          <div className="space-y-2">
+  <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">
+    Identify Entity <span className="text-[8px] opacity-50 ml-2">// Name or Company</span>
+  </label>
+  <input 
+    type="text" 
+    required
+    value={formData.name}
+    onChange={(e) => setFormData({...formData, name: e.target.value})}
+    placeholder="EX: DAVID USMAN" 
+    className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest" 
+  />
+</div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Return Address</label>
-                <input 
-                  type="email" 
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  placeholder="email@domain.com" 
-                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold text-xs tracking-widest" 
-                />
-              </div>
+<div className="space-y-2">
+  <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">
+    Return Address <span className="text-[8px] opacity-50 ml-2">// Valid Email</span>
+  </label>
+  <input 
+    type="email" 
+    required
+    value={formData.email}
+    onChange={(e) => setFormData({...formData, email: e.target.value})}
+    placeholder="YOUR@EMAIL.COM" 
+    className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold text-xs tracking-widest" 
+  />
+</div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">Transmission Data</label>
-                <textarea 
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  placeholder="DESCRIBE PROJECT OR INQUIRY..." 
-                  rows={4} 
-                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest resize-none"
-                ></textarea>
-              </div>
+<div className="space-y-2">
+  <label className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest ml-2">
+    Transmission Data <span className="text-[8px] opacity-50 ml-2">// Your Message</span>
+  </label>
+  <textarea 
+    required
+    value={formData.message}
+    onChange={(e) => setFormData({...formData, message: e.target.value})}
+    placeholder="DESCRIBE THE PROJECT GOALS OR INQUIRY DETAILS..." 
+    rows={4} 
+    className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white outline-none focus:border-white/40 transition-all font-bold uppercase text-xs tracking-widest resize-none"
+  ></textarea>
+</div>
 
               <button 
                 type="submit"
@@ -149,9 +152,8 @@ export default function Contact() {
               >
                 {isSubmitting ? 'TRANSMITTING...' : 'Submit Protocol'}
               </button>
-            </form>
+     
           </div>
-        </div>
       </div>
     </section>
   );
