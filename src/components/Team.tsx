@@ -15,7 +15,7 @@ export default function TeamSection() {
       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
         scrollContainer.scrollLeft = 0;
       } else {
-        scrollContainer.scrollLeft += 2; // Reduced slightly for better mobile performance
+        scrollContainer.scrollLeft += 2; 
       }
       animationFrameId = requestAnimationFrame(scroll);
     };
@@ -35,40 +35,41 @@ export default function TeamSection() {
 
   const executives = [
     { 
-      name: "Executive Name", 
-      role: "Head of Academy", 
+      name: "Jesse Yerima", 
+      role: "Front-end Team Lead", 
       bio: "Directing project-based learning tracks and internal operational synchronization.", 
-      img: "/exec2.jpg",
+      img: "/team-img/front-end.jpg",
       linkedin: "#",
       facebook: "#"
     },
-    { 
-        name: "Executive Name", 
-        role: "Chief Operations", 
-        bio: "Managing cross-functional team workflows and platform deployment.", 
-        img: "/exec3.jpg",
-        linkedin: "#",
-        facebook: "#"
-    }
+    // { 
+    //     name: "Executive Name", 
+    //     role: "Chief Operations", 
+    //     bio: "Managing cross-functional team workflows and platform deployment.", 
+    //     img: "/exec3.jpg",
+    //     linkedin: "#",
+    //     facebook: "#"
+    // }
   ];
 
   const staff = [
     { name: "Domotimi Matthew", role: "UI/UX Designer", img: "/team-img/uiux02.jpg" },
     { name: "Predise Jessica", role: "UI/UX Designer", img: "/team-img/uiux01.jpg" },
-    { name: "Akanni Abdulmuiz", role: "Graphics Designer", img: "/team-img/graphics01.jpg" },
+    { name: "Akanni Abdulmuiz", role: "Graphics Designer", img: "/team-img/graphics01.jpeg", pos: "object-top" },
     { name: "Olorunpomi Temitope", role: "Graphics Designer", img: "/team-img/graphics02.jpg" },
-    { name: "Dimeji Alatishe", role: "QA Team Lead", img: "/team-img/QAteam.jpg" },
+    { name: "Dimeji Alatishe", role: "QA Team Lead", img: "/team-img/QAteam.jpg", pos: "object-top" },
+    { name: "Ajisegiri Ni'imatullah ", role: "QA Tester", img: "/team-img/QATester.jpeg", pos: "object-top" },
     { name: "Francis Abigeal", role: "QA Tester", img: "/team-img/QA-tester.jpg" },
-    { name: "Goodness Chukwu", role: "Social Media", img: "/team-img/socialmedia.jpg" },
+    { name: "Goodness Chukwu", role: "Social Media", img: "/team-img/socialmedia.jpg", pos: "object-top" },
+    { name: "Emmanuella Chinweuba", role: "Content Creator", img: "/team-img/content.jpeg" },
     { name: "Oke Merrybell", role: "Virtual Assistant", img: "/team-img/virtual-assistant.jpg" },
-    { name: "Ebiowei Rehoboth", role: "Copyright", img: "/team-img/copyright.jpg" },
-    { name: "Jesse Yerima", role: "Front-End Developer", img: "/team-img/front-end.jpg" },
-    { name: "Williams Pachuol", role: "Front-End Developer", img: "/team-img/front-end03.jpg" },
+    { name: "Ebiowei Rehoboth", role: "Copywriter", img: "/team-img/copyright.jpg" },
+    { name: "Williams Pachuol", role: "Front-End Developer", img: "/team-img/front-end03.jpg", pos: "object-top" },
     { name: "Ajumobi Isaac Oluwadamisi", role: "Front-End Developer", img: "/team-img/front-end04.jpeg" },
-    { name: "Tonia Onyeka", role: "Front-End Developer", img: "/team-img/web-dev.jpg" },
-    { name: "Duru Pristine", role: "Back-End Developer", img: "/team-img/back-end01.jpg" },
-    { name: "Victor Abuka", role: "Back-End Developer", img: "/team-img/back-end02.jpg" },
-    { name: "Akolawole Fawemimo", role: "Back-End Developer", img: "/team-img/back-end03.jpg" },
+    { name: "Tonia Onyeka", role: "Front-End Developer", img: "/team-img/web-dev.jpg", pos: "object-top" },
+    { name: "Duru Pristine", role: "Back-End Developer", img: "/team-img/back-end01.jpg", pos: "object-top" },
+    { name: "Victor Abuka", role: "Back-End Developer", img: "/team-img/back-end02.jpg", pos: "object-top" },
+    { name: "Akolawole Fawemimo", role: "Back-End Developer", img: "/team-img/back-end03.jpg", pos: "object-top" },
     { name: "John Edokpolor", role: "Back-End Developer", img: "/team-img/back-endadd.jpeg" },
   ];
 
@@ -140,7 +141,7 @@ export default function TeamSection() {
                     src={member.img} 
                     alt={member.name} 
                     fill 
-                    className="object-cover object-top scale-110 grayscale group-hover:grayscale-0 group-hover:scale-100 transition-all duration-700" 
+                    className={`object-cover ${member.pos} scale-110 grayscale group-hover:grayscale-0 group-hover:scale-100 transition-all duration-700`}
                 />
               </div>
               <h4 className="text-sm md:text-base font-black text-[#0F1115] uppercase tracking-normal">{member.name}</h4>

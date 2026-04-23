@@ -36,7 +36,7 @@ export default function Portfolio() {
                   <span className="text-[10px] font-black text-[#9CA3AF] uppercase tracking-widest">{c.id}</span>
                 </div>
 
-                <h3 className={`${c.isFeatured ? 'text-4xl md:text-6xl' : 'text-3xl md:text-4xl'} font-black mb-8 text-[#0F1115] uppercase tracking-tighter leading-[0.9]`}>
+                <h3 className={`${c.isFeatured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-black mb-8 text-[#0F1115] uppercase tracking-tighter leading-[0.9]`}>
                   {c.title}
                 </h3>
                 
