@@ -3,7 +3,7 @@ import Academy from "@/components/Academy";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
-import Insights from "@/components/Insights";
+// import Insights from "@/components/Insights";
 import Team from "@/components/Team";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
@@ -52,7 +52,7 @@ export default function Home() {
         <Academy />
         <About />
         <Team />
-        <Insights />
+        {/* <Insights /> */}
         <Contact />
       </div>
     </main>
