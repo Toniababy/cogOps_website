@@ -52,9 +52,10 @@ export default function Navbar() {
             <div className="relative h-16 w-16 md:h-20 md:w-20 flex-shrink-0 transition-all">
               <Image
                 src="/cogops-logo.png"
-                alt="Logo"
+                alt="CogOps Logo"
                 fill
                 priority
+                sizes="(max-width: 768px) 48px, 64px"
                 className="object-contain"
               />
             </div>
