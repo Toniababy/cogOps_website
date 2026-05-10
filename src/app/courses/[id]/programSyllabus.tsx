@@ -42,7 +42,7 @@ export default function ProgramSyllabus({ trackId }: { trackId: string }) {
       <div className="flex items-center gap-2">
         <div className="w-1 h-1 bg-[#0F1115] rounded-full" />
         <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#0F1115]">
-            CogOps Syllabus Pipeline
+          <span className="normal-case">CogOps</span> Syllabus Pipeline
         </h3>
       </div>
       

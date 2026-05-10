@@ -113,7 +113,7 @@ export default function Navbar() {
                 </div>
                 <div>
                   <p className="text-[8px] font-black text-[#6B7280] uppercase tracking-widest">Active Operator</p>
-                  <p className="text-base font-black text-[#0F1115] uppercase tracking-tighter">CogOps // {userName.split(' ')[0]}</p>
+                  <p className="text-base font-black text-[#0F1115] normal-case tracking-tighter">CogOps // {userName.split(' ')[0]}</p>
                 </div>
               </div>
             )}
