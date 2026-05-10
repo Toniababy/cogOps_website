@@ -75,13 +75,13 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="https://wa.me/2348118102821" target="_blank" className="flex items-center gap-6 group">
+              <a href="https://wa.me/2348118102812" target="_blank" className="flex items-center gap-6 group">
                 <div className="w-14 h-14 bg-[#F3F4F6] rounded-2xl flex items-center justify-center text-[#0F1115] group-hover:bg-[#25D366] group-hover:text-white transition-all">
                   <MessageCircle size={24} />
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-[#6B7280] uppercase tracking-widest">Direct WhatsApp</p>
-                  <p className="text-xl font-black text-[#0F1115]">+234 811 810 2821</p>
+                  <p className="text-xl font-black text-[#0F1115]">+234 811 810 2812</p>
                 </div>
               </a>
             </div>

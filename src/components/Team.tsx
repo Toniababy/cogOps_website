@@ -36,7 +36,7 @@ export default function TeamSection() {
   const executives = [
     { 
       name: "Jesse Yerima", 
-      role: "Front-end Team Lead", 
+      role: "Head of Tech", 
       bio: "Directing project-based learning tracks and internal operational synchronization.", 
       img: "/team-img/front-end.jpg",
       linkedin: "#",
@@ -65,9 +65,7 @@ export default function TeamSection() {
     { name: "Oke Merrybell", role: "Virtual Assistant", img: "/team-img/virtual-assistant.jpg" },
     { name: "Ebiowei Rehoboth", role: "Copywriter", img: "/team-img/copyright.jpg" },
     { name: "Williams Pachuol", role: "Front-End Developer", img: "/team-img/front-end03.jpg", pos: "object-top" },
-    { name: "Ajumobi Isaac Oluwadamisi", role: "Front-End Developer", img: "/team-img/front-end04.jpeg" },
     { name: "Tonia Onyeka", role: "Front-End Developer", img: "/team-img/web-dev.jpg", pos: "object-top" },
-    { name: "Duru Pristine", role: "Back-End Developer", img: "/team-img/back-end01.jpg", pos: "object-top" },
     { name: "Victor Abuka", role: "Back-End Developer", img: "/team-img/back-end02.jpg", pos: "object-top" },
     { name: "Akolawole Fawemimo", role: "Back-End Developer", img: "/team-img/back-end03.jpg", pos: "object-top" },
     { name: "John Edokpolor", role: "Back-End Developer", img: "/team-img/back-endadd.jpeg" },

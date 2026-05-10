@@ -37,7 +37,7 @@ export default function Footer() {
               <li><a href="https://x.com/cogops93" className="hover:text-[#0F1115]">X / Twitter</a></li>
               <li><a href="https://instagram.com/cogops93" className="hover:text-[#0F1115]">Instagram</a></li>
               <li><a href="https://linkedin.com/company/CogOps" className="hover:text-[#0F1115]">LinkedIn</a></li>
-              <li><a href="https://wa.me/2348118102821" className="hover:text-[#0F1115]">WhatsApp</a></li>
+              <li><a href="https://wa.me/2348118102812" className="hover:text-[#0F1115]">WhatsApp</a></li>
             </ul>
           </div>
         </div>

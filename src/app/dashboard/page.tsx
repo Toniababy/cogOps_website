@@ -39,7 +39,7 @@ export default function Dashboard() {
     }, [router]);
 
     const handleWhatsAppEnrollment = () => {
-        const phoneNumber = "2348118102821";
+        const phoneNumber = "2348118102812";
         const text = `Hello CogOps, I am ${userName}. I've accessed my dashboard and I'm ready to finalize my enrollment and payment.`;
         window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
     };

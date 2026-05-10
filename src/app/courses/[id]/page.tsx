@@ -32,7 +32,7 @@ export default function CourseDetailPage() {
       });
 
       // 2. Immediate WhatsApp Redirect
-      const phoneNumber = "2348118102821";
+      const phoneNumber = "2348118102812";
       const text = `Hello CogOps, I'm ${userName}. I want to enroll for the [${currentCourse.title}] track. Please guide me on the payment process.`;
       window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
       

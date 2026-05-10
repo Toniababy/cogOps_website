@@ -51,7 +51,7 @@ export default function IntakeForm() {
   };
 
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = "2348118102821"; // Your WhatsApp Number
+    const phoneNumber = "2348118102812"; // Your WhatsApp Number
     const text = `Hello CogOps, I'm ${formData.name}. I'm interested in ${formData.projectType}. %0A%0ADetails: ${formData.challenge}`;
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
   };

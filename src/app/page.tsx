@@ -9,6 +9,7 @@ import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhoWeServe from "@/components/WhoWeServe";
+import CTA from "@/components/Cta";
 
 export default function Home() {
   return (
@@ -54,6 +55,7 @@ export default function Home() {
         <Team />
         {/* <Insights /> */}
         <Contact />
+        <CTA/>
       </div>
     </main>
   );
